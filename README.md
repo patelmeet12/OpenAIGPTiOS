@@ -14,3 +14,8 @@ https://beta.openai.com/docs/engines
 Set your API token from creating one [here](https://beta.openai.com/account/api-keys).
 
 `public static let SECRETKEY = "TOKEN"`
+
+
+### Demo
+
+https://user-images.githubusercontent.com/25685850/213879164-fafdc6ce-8aee-453d-8b0e-d864fcc756c5.mp4
