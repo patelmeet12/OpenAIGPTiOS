@@ -15,7 +15,8 @@ Set your API token from creating one [here](https://beta.openai.com/account/api-
 
 `public static let SECRETKEY = "TOKEN"`
 
-
 ### Demo
+
+[![Watch the video](https://img.icons8.com/cotton/64/null/laptop-play-video.png)](https://youtu.be/9-5oLvUmlaQ)
 
 https://user-images.githubusercontent.com/25685850/213923578-fcdbe206-d104-4856-8a08-aaf500c36ed7.mp4
