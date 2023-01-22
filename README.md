@@ -18,4 +18,4 @@ Set your API token from creating one [here](https://beta.openai.com/account/api-
 
 ### Demo
 
-<!--- https://user-images.githubusercontent.com/25685850/213879164-fafdc6ce-8aee-453d-8b0e-d864fcc756c5.mp4 --->
+https://user-images.githubusercontent.com/25685850/213923578-fcdbe206-d104-4856-8a08-aaf500c36ed7.mp4
