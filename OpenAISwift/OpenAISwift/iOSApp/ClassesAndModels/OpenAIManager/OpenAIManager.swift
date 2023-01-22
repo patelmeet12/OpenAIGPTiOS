@@ -28,14 +28,14 @@ class OpenAIManager {
     
     func makeRequest(json: [String: Any], completion: @escaping (String)->()) {
         
-        guard let url = URL(string: "https://api.openai.com/v1/engines/\(engine)/completions"),
+        guard let url = URL(string: "https://api.openai.com/v1/completions"),
               let payload = try? JSONSerialization.data(withJSONObject: json) else {
             return
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer \(OpenAISecretKey.SECRETKEY)", forHTTPHeaderField: "Authorization")
         request.httpBody = payload
         
@@ -60,14 +60,17 @@ class OpenAIManager {
         
         let jsonPayload = [
             "prompt": prompt,
-            //"model": "text-davinci-003",
-            "max_tokens": 200
+            "model": "text-davinci-003",
+            "max_tokens": 200,
+            "temperature": 0
         ] as [String : Any]
+        
+        print("Parameters: \(jsonPayload)")
         
         self.makeRequest(json: jsonPayload) { [weak self] (str) in
             DispatchQueue.main.async {
                 
-                print("===>", str)
+                print("===>", str.trime())
                 completion(str)
             }
         }

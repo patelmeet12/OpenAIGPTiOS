@@ -53,12 +53,14 @@ class ChatVC: UIViewController {
         if !(txtMessage.isempty()) {
             
             self.ProgressShow()
-            self.sendMessage(question: txtMessage.text?.trime() ?? "", isSend: true)
+            self.sendMessage(question: self.txtMessage.text?.trime() ?? "", isSend: true)
             
             OpenAIManager.shared.processPrompt(prompt: self.txtMessage.text?.trime() ?? "") { reponse in
                 
+                // Clear TextView
+                self.txtMessage.text = ""
                 self.ProgressHide()
-                self.sendMessage(question: reponse, isSend: false)
+                self.sendMessage(question: reponse.trime(), isSend: false)
             }
         } else {
 
@@ -80,8 +82,6 @@ class ChatVC: UIViewController {
         self.arrOfQuestionAnswer.append(ChatGPT(questionAnswer: question, isSend: isSend))
         self.reloadTable()
         
-        // Clear TextView
-        self.txtMessage.text = ""
         self.btnSendMessage.isEnabled = false
     }
     
