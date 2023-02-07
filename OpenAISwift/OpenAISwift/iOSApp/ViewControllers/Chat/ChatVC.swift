@@ -47,19 +47,24 @@ class ChatVC: UIViewController {
     }
     
     //MARK:  Buttons Clicked Action
+    @IBAction func btnBackClicked(_ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func btnSendClicked(_ sender: UIButton) {
         
         self.view.endEditing(true)
         if !(txtMessage.isempty()) {
             
-            self.ProgressShow()
+            self.showHud()
             self.sendMessage(question: self.txtMessage.text?.trime() ?? "", isSend: true)
             
             OpenAIManager.shared.processPrompt(prompt: self.txtMessage.text?.trime() ?? "") { reponse in
                 
                 // Clear TextView
                 self.txtMessage.text = ""
-                self.ProgressHide()
+                self.hideHud()
                 self.sendMessage(question: reponse.trime(), isSend: false)
             }
         } else {

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1528E7A32982B62000429E8E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1528E7A22982B62000429E8E /* HomeVC.swift */; };
+		15C38A9A2982502C00AA60CF /* ViewPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C38A992982502C00AA60CF /* ViewPhotosVC.swift */; };
+		15C38A9C298251EF00AA60CF /* ViewPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C38A9B298251EF00AA60CF /* ViewPhotosCollectionViewCell.swift */; };
 		15E2C13A297C1CEA00EC3C36 /* OpenAIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2C139297C1CEA00EC3C36 /* OpenAIManager.swift */; };
-		15E2C13F297C438D00EC3C36 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2C13E297C438D00EC3C36 /* ProgressHUD.swift */; };
+		C254C97AD5C9C2F75E4D4FE8 /* Pods_OpenAISwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A378B06DDD6DC8164D5195D3 /* Pods_OpenAISwift.framework */; };
 		FF47DCEC29640536005C2DE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47DCEB29640536005C2DE3 /* AppDelegate.swift */; };
 		FF47DCEE29640536005C2DE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47DCED29640536005C2DE3 /* SceneDelegate.swift */; };
 		FF47DCF029640536005C2DE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47DCEF29640536005C2DE3 /* ViewController.swift */; };
@@ -21,8 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C146F9F3D34EAA029CBD9CC /* Pods-OpenAISwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAISwift.debug.xcconfig"; path = "Target Support Files/Pods-OpenAISwift/Pods-OpenAISwift.debug.xcconfig"; sourceTree = "<group>"; };
+		1528E7A22982B62000429E8E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		15C38A992982502C00AA60CF /* ViewPhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotosVC.swift; sourceTree = "<group>"; };
+		15C38A9B298251EF00AA60CF /* ViewPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		15E2C139297C1CEA00EC3C36 /* OpenAIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIManager.swift; sourceTree = "<group>"; };
-		15E2C13E297C438D00EC3C36 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		A378B06DDD6DC8164D5195D3 /* Pods_OpenAISwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenAISwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91F93BC4E9AD616BB94665F /* Pods-OpenAISwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAISwift.release.xcconfig"; path = "Target Support Files/Pods-OpenAISwift/Pods-OpenAISwift.release.xcconfig"; sourceTree = "<group>"; };
 		FF47DCE829640536005C2DE3 /* OpenAISwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenAISwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF47DCEB29640536005C2DE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF47DCED29640536005C2DE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,18 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C254C97AD5C9C2F75E4D4FE8 /* Pods_OpenAISwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15E2C13D297C437C00EC3C36 /* ProgressHUD */ = {
+		1528E7A12982B61300429E8E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				15E2C13E297C438D00EC3C36 /* ProgressHUD.swift */,
+				1528E7A22982B62000429E8E /* HomeVC.swift */,
 			);
-			path = ProgressHUD;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		15C38A9729824FFD00AA60CF /* ViewPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				15C38A992982502C00AA60CF /* ViewPhotosVC.swift */,
+				15C38A9B298251EF00AA60CF /* ViewPhotosCollectionViewCell.swift */,
+			);
+			path = ViewPhotos;
+			sourceTree = "<group>";
+		};
+		15C38A982982500F00AA60CF /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				FFAE2FBB2976A43D00B20BC2 /* ChatVC.swift */,
+				FFAE2FBF2976A65500B20BC2 /* ChatTextTableViewCell.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		15EF7C3D297BCB2C00FCD575 /* OpenAIManager */ = {
@@ -63,11 +90,30 @@
 			path = OpenAIManager;
 			sourceTree = "<group>";
 		};
+		F261FDE3F033124B172C8BAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A378B06DDD6DC8164D5195D3 /* Pods_OpenAISwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6C17A7BF9853DDA19E190AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C146F9F3D34EAA029CBD9CC /* Pods-OpenAISwift.debug.xcconfig */,
+				C91F93BC4E9AD616BB94665F /* Pods-OpenAISwift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FF47DCDF29640536005C2DE3 = {
 			isa = PBXGroup;
 			children = (
 				FF47DCEA29640536005C2DE3 /* OpenAISwift */,
 				FF47DCE929640536005C2DE3 /* Products */,
+				F6C17A7BF9853DDA19E190AC /* Pods */,
+				F261FDE3F033124B172C8BAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				15EF7C3D297BCB2C00FCD575 /* OpenAIManager */,
-				15E2C13D297C437C00EC3C36 /* ProgressHUD */,
 				FFAE2FC72976B44000B20BC2 /* Constant */,
 			);
 			path = ClassesAndModels;
@@ -131,9 +176,10 @@
 		FFAE2FC82976B44D00B20BC2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1528E7A12982B61300429E8E /* Home */,
+				15C38A982982500F00AA60CF /* Chat */,
+				15C38A9729824FFD00AA60CF /* ViewPhotos */,
 				FF47DCF129640536005C2DE3 /* Main.storyboard */,
-				FFAE2FBB2976A43D00B20BC2 /* ChatVC.swift */,
-				FFAE2FBF2976A65500B20BC2 /* ChatTextTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -145,17 +191,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF47DCFC29640537005C2DE3 /* Build configuration list for PBXNativeTarget "OpenAISwift" */;
 			buildPhases = (
+				40A1F40AA3AE5DAA983BB7A0 /* [CP] Check Pods Manifest.lock */,
 				FF47DCE429640536005C2DE3 /* Sources */,
 				FF47DCE529640536005C2DE3 /* Frameworks */,
 				FF47DCE629640536005C2DE3 /* Resources */,
+				CE3D7AC9C803CEC80F5B48FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = OpenAISwift;
-			packageProductDependencies = (
-			);
 			productName = OpenAISwift;
 			productReference = FF47DCE829640536005C2DE3 /* OpenAISwift.app */;
 			productType = "com.apple.product-type.application";
@@ -184,8 +230,6 @@
 				Base,
 			);
 			mainGroup = FF47DCDF29640536005C2DE3;
-			packageReferences = (
-			);
 			productRefGroup = FF47DCE929640536005C2DE3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,6 +252,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40A1F40AA3AE5DAA983BB7A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenAISwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE3D7AC9C803CEC80F5B48FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenAISwift/Pods-OpenAISwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenAISwift/Pods-OpenAISwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenAISwift/Pods-OpenAISwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF47DCE429640536005C2DE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -215,11 +301,13 @@
 			files = (
 				FFAE2FC02976A65500B20BC2 /* ChatTextTableViewCell.swift in Sources */,
 				FFAE2FBC2976A43D00B20BC2 /* ChatVC.swift in Sources */,
-				15E2C13F297C438D00EC3C36 /* ProgressHUD.swift in Sources */,
+				15C38A9C298251EF00AA60CF /* ViewPhotosCollectionViewCell.swift in Sources */,
 				15E2C13A297C1CEA00EC3C36 /* OpenAIManager.swift in Sources */,
 				FFAE2FBE2976A5A700B20BC2 /* AppConstant.swift in Sources */,
 				FF47DCF029640536005C2DE3 /* ViewController.swift in Sources */,
+				15C38A9A2982502C00AA60CF /* ViewPhotosVC.swift in Sources */,
 				FF47DCEC29640536005C2DE3 /* AppDelegate.swift in Sources */,
+				1528E7A32982B62000429E8E /* HomeVC.swift in Sources */,
 				FF47DCEE29640536005C2DE3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +450,7 @@
 		};
 		FF47DCFD29640537005C2DE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C146F9F3D34EAA029CBD9CC /* Pods-OpenAISwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -373,6 +462,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -393,6 +483,7 @@
 		};
 		FF47DCFE29640537005C2DE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91F93BC4E9AD616BB94665F /* Pods-OpenAISwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -404,6 +495,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

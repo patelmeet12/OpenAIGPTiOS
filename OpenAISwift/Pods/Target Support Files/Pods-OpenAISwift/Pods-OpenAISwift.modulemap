@@ -1,0 +1,6 @@
+framework module Pods_OpenAISwift {
+  umbrella header "Pods-OpenAISwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

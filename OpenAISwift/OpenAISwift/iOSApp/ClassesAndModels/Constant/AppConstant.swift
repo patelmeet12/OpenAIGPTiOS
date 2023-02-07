@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
 let APPDEL = UIApplication.shared.delegate as! AppDelegate
 
@@ -17,7 +18,7 @@ struct Constant {
 
 struct OpenAISecretKey {
     
-    public static let SECRETKEY = "SET SECRET KEY"
+    public static let SECRETKEY = "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"//"SET SECRET KEY"
 }
 
 extension UIViewController {
@@ -61,21 +62,16 @@ extension UIViewController {
         }
     }
     
-    func ProgressShow() {
+    public func showHud() {
         
-        if #available(iOS 13.0, *) {
-            ProgressHUD.show()
-        } else {
-            // Fallback on earlier versions
-        }
+        let loadingNotification = MBProgressHUD.showAdded(to: UIWindow.key?.rootViewController?.view ?? UIView(), animated: true)
+        loadingNotification.mode = MBProgressHUDMode.indeterminate
+        loadingNotification.label.text = "Loading..."
     }
-    
-    func ProgressHide() {
+    public func hideHud() {
         
-        if #available(iOS 13.0, *) {
-            ProgressHUD.dismiss()
-        } else {
-            // Fallback on earlier versions
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: UIWindow.key?.rootViewController?.view ?? UIView(), animated: true)
         }
     }
 }
@@ -164,5 +160,56 @@ extension UITextField {
         set {
             self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
         }
+    }
+}
+
+extension UIWindow {
+    
+    static var key: UIWindow? {
+        
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+}
+
+let imageCache = NSCache<NSString, UIImage>()
+extension UIImageView {
+    
+    func loadImageUsingCache(withUrl urlString : String) {
+        
+        let url = URL(string: urlString)
+        if url == nil {return}
+        self.image = nil
+        
+        // check cached image
+        if let cachedImage = imageCache.object(forKey: urlString as NSString)  {
+            self.image = cachedImage
+            return
+        }
+        
+        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .white)
+        addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        activityIndicator.center = self.center
+        
+        // if not, download image from url
+        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data!) {
+                    imageCache.setObject(image, forKey: urlString as NSString)
+                    self.image = image
+                    activityIndicator.removeFromSuperview()
+                }
+            }
+            
+        }).resume()
     }
 }

@@ -8,23 +8,29 @@
 import Foundation
 import UIKit
 
-enum OpenAIEngine: String {
+//https://api.openai.com/v1/completions
+//https://api.openai.com/v1/images/generations
+
+struct Response: Decodable {
     
-    // https://beta.openai.com/docs/engines
-    case davinci
-    case curie
-    case babbage
-    case ada
+    let data: [ImageURL]
+}
+
+struct ImageURL: Decodable {
     
-    case instructcurie = "instruct-curie"
-    case instructdavinci = "instruct-davinci"
+    let url: String
+}
+
+enum APIError: Error {
+    
+    case unableToCreateImageURL
+    case unableToConvertDataIntoImage
+    case unableToCreateURLForURLRequest
 }
 
 class OpenAIManager {
     
     static let shared = OpenAIManager()
-    
-    var engine: OpenAIEngine = .davinci
     
     func makeRequest(json: [String: Any], completion: @escaping (String)->()) {
         
@@ -48,7 +54,7 @@ class OpenAIManager {
             if let json = json,
                let choices = json["choices"] as? [[String: Any]],
                let str = choices.first?["text"] as? String {
-                completion (str)
+                completion(str)
             } else {
                 completion("Error::nothing returned")
             }
@@ -61,7 +67,7 @@ class OpenAIManager {
         let jsonPayload = [
             "prompt": prompt,
             "model": "text-davinci-003",
-            "max_tokens": 200,
+            "max_tokens": 2048,
             "temperature": 0
         ] as [String : Any]
         
@@ -74,5 +80,42 @@ class OpenAIManager {
                 completion(str)
             }
         }
+    }
+    
+    func fetchImageForPrompt(prompt: String, completion: @escaping ([ImageURL])->()) {
+        
+        let jsonPayload = [
+            "prompt": prompt,
+            "n": 10,
+            "size": "1024x1024"
+        ] as [String : Any]
+        
+        print("Parameters: \(jsonPayload)")
+        
+        guard let url = URL(string: "https://api.openai.com/v1/images/generations"),
+              let payload = try? JSONSerialization.data(withJSONObject: jsonPayload) else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(OpenAISecretKey.SECRETKEY)", forHTTPHeaderField: "Authorization")
+        request.httpBody = payload
+        
+        print("URL: \(request)")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            let decoder = JSONDecoder()
+            let results = try? decoder.decode(Response.self, from: data ?? Data())
+            
+            print("Data:", results?.data)
+            
+            let imageURL = results?.data
+            print("imageURL:", imageURL)
+            completion(imageURL ?? [ImageURL]())
+            
+        }.resume()
     }
 }
