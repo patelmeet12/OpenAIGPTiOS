@@ -18,7 +18,7 @@ struct Constant {
 
 struct OpenAISecretKey {
     
-    public static let SECRETKEY = "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"//"SET SECRET KEY"
+    public static let SECRETKEY = "SET SECRET KEY"
 }
 
 extension UIViewController {
