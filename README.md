@@ -13,7 +13,9 @@ https://beta.openai.com/docs/engines
 
 Set your API token from creating one [here](https://beta.openai.com/account/api-keys).
 
-`public static let SECRETKEY = "TOKEN"`
+```swift
+public static let SECRETKEY = "TOKEN"
+```
 
 ### Demo
 
