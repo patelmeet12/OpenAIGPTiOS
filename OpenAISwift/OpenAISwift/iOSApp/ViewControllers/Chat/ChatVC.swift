@@ -10,6 +10,7 @@ import UIKit
 class ChatVC: UIViewController {
     
     //MARK:  Outlets and Variable Declarations
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tblChat: UITableView!
     @IBOutlet weak var txtMessage: UITextField!
     @IBOutlet weak var viewSendMessage: UIView!
@@ -21,6 +22,12 @@ class ChatVC: UIViewController {
 //        let question: String
 //        let answer: String
 //    }
+    
+    enum FindType {
+        
+        case Text, Code
+    }
+    var isFind: FindType = .Text
     
     private struct ChatGPT {
         
@@ -60,7 +67,9 @@ class ChatVC: UIViewController {
             self.showHud()
             self.sendMessage(question: self.txtMessage.text?.trime() ?? "", isSend: true)
             
-            OpenAIManager.shared.processPrompt(prompt: self.txtMessage.text?.trime() ?? "") { reponse in
+            let isFind = isFind == .Text ? true:false
+            
+            OpenAIManager.shared.processPrompt(prompt: self.txtMessage.text?.trime() ?? "", isType: isFind) { reponse in
                 
                 // Clear TextView
                 self.txtMessage.text = ""
@@ -75,6 +84,9 @@ class ChatVC: UIViewController {
     
     //MARK:  Functions
     @objc private func initWithObjects() {
+        
+        let isFind = isFind == .Text ? "Text Completion":"Code Completion"
+        self.lblTitle.text = isFind
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)

@@ -36,8 +36,8 @@
                                             <action selector="btnBackClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1t-N2-ap3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hl-9W-JY2">
-                                        <rect key="frame" x="169.5" y="16" width="36" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Completion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hl-9W-JY2">
+                                        <rect key="frame" x="126" y="16" width="123.5" height="44"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -173,7 +173,7 @@
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHJ-9j-6vy">
                                                 <rect key="frame" x="16" y="16" width="343" height="44"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D8x-eb-zTR">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Something..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D8x-eb-zTR">
                                                         <rect key="frame" x="16" y="0.0" width="271" height="44"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="CircularStd-Book" family="Circular Std" pointSize="16"/>
@@ -249,6 +249,7 @@
                     <navigationItem key="navigationItem" id="zg2-GE-BT0"/>
                     <connections>
                         <outlet property="btnSendMessage" destination="EUV-Kg-4J6" id="uX6-6e-7vq"/>
+                        <outlet property="lblTitle" destination="6Hl-9W-JY2" id="a7n-w2-IqY"/>
                         <outlet property="tblChat" destination="Y7m-g1-ctd" id="Emx-GB-1f6"/>
                         <outlet property="txtMessage" destination="D8x-eb-zTR" id="kDc-fi-Vy4"/>
                         <outlet property="viewSendMessage" destination="SHJ-9j-6vy" id="YEA-gs-Ewt"/>
@@ -299,8 +300,8 @@
                                             <action selector="btnBackClicked:" destination="ffW-Vz-ief" eventType="touchUpInside" id="hqb-2q-76W"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clY-hm-6h5">
-                                        <rect key="frame" x="160" y="16" width="55.5" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Generation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clY-hm-6h5">
+                                        <rect key="frame" x="120.5" y="16" width="134.5" height="44"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -492,7 +493,7 @@
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WhL-GJ-D47">
-                                        <rect key="frame" x="16" y="48" width="343" height="104"/>
+                                        <rect key="frame" x="16" y="48" width="343" height="224"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlO-C4-ELc">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
@@ -500,7 +501,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShN-5j-p0J">
                                                         <rect key="frame" x="16" y="0.0" width="311" height="44"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Chat">
+                                                        <state key="normal" title="Text Completion">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -533,7 +534,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLK-kz-D98">
                                                         <rect key="frame" x="16" y="0.0" width="311" height="44"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="Images">
+                                                        <state key="normal" title="Image Generation">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -558,6 +559,72 @@
                                                     <constraint firstItem="YNj-MW-dCZ" firstAttribute="centerY" secondItem="msd-XR-XwJ" secondAttribute="centerY" id="aaE-Bg-RPc"/>
                                                     <constraint firstAttribute="trailing" secondItem="NLK-kz-D98" secondAttribute="trailing" constant="16" id="joY-G3-VxR"/>
                                                     <constraint firstAttribute="height" constant="44" id="z9R-Y9-RBc"/>
+                                                </constraints>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhP-1I-Ptw">
+                                                <rect key="frame" x="0.0" y="120" width="343" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyt-2x-JGk">
+                                                        <rect key="frame" x="16" y="0.0" width="311" height="44"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Code Completion">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnCodeClicked:" destination="MJC-lX-YNa" eventType="touchUpInside" id="DS5-qd-89S"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8rz-wG-5Fk">
+                                                        <rect key="frame" x="303" y="12" width="24" height="20.5"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="8rz-wG-5Fk" secondAttribute="height" multiplier="1:1" id="FE7-7g-wAx"/>
+                                                            <constraint firstAttribute="height" constant="24" id="sSU-hx-NWe"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.1529411765" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="21J-w1-SSB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8rz-wG-5Fk" secondAttribute="trailing" constant="16" id="4qC-sd-i4L"/>
+                                                    <constraint firstItem="8rz-wG-5Fk" firstAttribute="centerY" secondItem="dhP-1I-Ptw" secondAttribute="centerY" id="GOE-T8-xRh"/>
+                                                    <constraint firstItem="yyt-2x-JGk" firstAttribute="leading" secondItem="dhP-1I-Ptw" secondAttribute="leading" constant="16" id="Vrh-g1-opX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yyt-2x-JGk" secondAttribute="trailing" constant="16" id="YN9-v3-UCf"/>
+                                                    <constraint firstItem="yyt-2x-JGk" firstAttribute="top" secondItem="dhP-1I-Ptw" secondAttribute="top" id="cWS-Ri-wBd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yyt-2x-JGk" secondAttribute="bottom" id="xC3-hU-DLE"/>
+                                                </constraints>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twg-k7-1XR">
+                                                <rect key="frame" x="0.0" y="180" width="343" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Je-Ow-zxM">
+                                                        <rect key="frame" x="16" y="0.0" width="311" height="44"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="About OpenAI ChatGPT">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnAboutOpenAIChatGPTClicked:" destination="MJC-lX-YNa" eventType="touchUpInside" id="bLF-kC-ZHQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7J0-Px-E7V">
+                                                        <rect key="frame" x="303" y="12" width="24" height="20.5"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="Bno-lu-1Z3"/>
+                                                            <constraint firstAttribute="width" secondItem="7J0-Px-E7V" secondAttribute="height" multiplier="1:1" id="xhk-ky-Uns"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.1529411765" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="7J0-Px-E7V" secondAttribute="trailing" constant="16" id="0Sr-j1-Z0e"/>
+                                                    <constraint firstAttribute="height" constant="44" id="3RP-l3-rUa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2Je-Ow-zxM" secondAttribute="trailing" constant="16" id="CZy-SK-kI7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2Je-Ow-zxM" secondAttribute="bottom" id="Li3-Bg-VJF"/>
+                                                    <constraint firstItem="7J0-Px-E7V" firstAttribute="centerY" secondItem="Twg-k7-1XR" secondAttribute="centerY" id="SXG-sh-B1s"/>
+                                                    <constraint firstItem="2Je-Ow-zxM" firstAttribute="leading" secondItem="Twg-k7-1XR" secondAttribute="leading" constant="16" id="Tk9-1c-ANQ"/>
+                                                    <constraint firstItem="2Je-Ow-zxM" firstAttribute="top" secondItem="Twg-k7-1XR" secondAttribute="top" id="l0R-EE-P0i"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -586,7 +653,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="SDF-tY-ug8"/>
                     <connections>
+                        <outlet property="viewAbout" destination="Twg-k7-1XR" id="Nmg-IK-RUF"/>
                         <outlet property="viewChat" destination="nlO-C4-ELc" id="Qfr-tX-PWC"/>
+                        <outlet property="viewCode" destination="dhP-1I-Ptw" id="3WB-9d-cdW"/>
                         <outlet property="viewImages" destination="msd-XR-XwJ" id="imt-C1-Yeb"/>
                     </connections>
                 </viewController>

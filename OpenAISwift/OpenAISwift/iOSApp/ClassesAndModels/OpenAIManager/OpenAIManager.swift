@@ -62,14 +62,26 @@ class OpenAIManager {
         }.resume()
     }
     
-    func processPrompt(prompt: String, completion: @escaping ((_ reponse: String) -> Void)) {
+    func processPrompt(prompt: String, isType: Bool = true, completion: @escaping ((_ reponse: String) -> Void)) {
         
-        let jsonPayload = [
-            "prompt": prompt,
-            "model": "text-davinci-003",
-            "max_tokens": 2048,
-            "temperature": 0
-        ] as [String : Any]
+        var jsonPayload = [String : Any]()
+        
+        if isType == true {
+            
+            jsonPayload = [
+                "prompt": prompt,
+                "model": "text-davinci-003",
+                "max_tokens": 2048,
+                "temperature": 0
+            ] as [String : Any]
+        } else {
+            
+            jsonPayload = [
+                "prompt": prompt,
+                "model": "code-davinci-002",
+                "max_tokens": 2048
+            ] as [String : Any]
+        }
         
         print("Parameters: \(jsonPayload)")
         

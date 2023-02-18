@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeVC: UIViewController {
     
     //MARK:  Outlets and Variable Declarations
     @IBOutlet weak var viewChat: UIView!
     @IBOutlet weak var viewImages: UIView!
+    @IBOutlet weak var viewCode: UIView!
+    @IBOutlet weak var viewAbout: UIView!
     
     //MARK: 
     override func viewDidLoad() {
@@ -33,6 +36,7 @@ class HomeVC: UIViewController {
     @IBAction func btnChatClicked(_ sender: UIButton) {
         
         let chatVC = storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+        chatVC.isFind = .Text
         self.navigationController?.pushViewController(chatVC, animated: true)
     }
     
@@ -42,10 +46,28 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(viewPhotosVC, animated: true)
     }
     
+    @IBAction func btnCodeClicked(_ sender: UIButton) {
+        
+        let chatVC = storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+        chatVC.isFind = .Code
+        self.navigationController?.pushViewController(chatVC, animated: true)
+    }
+    
+    @IBAction func btnAboutOpenAIChatGPTClicked(_ sender: UIButton) {
+        
+        if let url = URL(string: "https://openai.com/about/") {
+            
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
     //MARK:  Functions
     @objc private func initWithObjects() {
         
         self.viewChat.setCornerRaius(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radious: 8)
         self.viewImages.setCornerRaius(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radious: 8)
+        self.viewCode.setCornerRaius(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radious: 8)
+        self.viewAbout.setCornerRaius(corners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radious: 8)
     }
 }
