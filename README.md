@@ -17,6 +17,8 @@ Set your API token from creating one [here](https://beta.openai.com/account/api-
 public static let SECRETKEY = "TOKEN"
 ```
 
+Read My Blog:- https://medium.com/@patelmeet12/chatgpt-in-ios-swift-d8a2eda59272
+
 ### Demo
 
 [![Watch the video](https://img.icons8.com/cotton/64/null/laptop-play-video.png)](https://youtu.be/9-5oLvUmlaQ)
